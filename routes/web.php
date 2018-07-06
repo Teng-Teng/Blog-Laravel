@@ -13,8 +13,13 @@
 
 use App\Task;
 
+
 Route::get('/', 'PostsController@index');
-Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/posts/create', 'PostsController@create');
+
+
+Route::get('/postsAlbum', 'PostsAlbumController@index');
+Route::get('/postsAlbum/{post}', 'PostsAlbumController@show');
 
 
 Route::get('/tasks', 'TasksController@index');

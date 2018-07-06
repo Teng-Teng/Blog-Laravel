@@ -11,8 +11,8 @@ class PostsController extends Controller
         return view('posts.index');
     }
 
-    public function show()
+    public function create()
     {
-        return view('posts.show');
+        return view('posts.create');
     }
 }
