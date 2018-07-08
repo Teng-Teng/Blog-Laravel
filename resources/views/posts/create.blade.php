@@ -24,8 +24,14 @@
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
 
-            <button type="submit" class="btn btn-primary">Publish</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Publish</button>
+            </div>
+
+            @include ('layouts.errors')
+
         </form>
+
     </div>
 
 @endsection
