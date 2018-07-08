@@ -9,7 +9,24 @@ class PostsController extends Controller
 {
     public function index()
     {
-        return view('posts.index');
+        // $posts = Post::all();
+        // $posts = Post::orderBy('created_at', 'desc')->get();
+
+        $posts = Post::latest()->get();
+
+        return view('posts.index', compact('posts'));
+    }
+
+//    public function show($id)
+//    {
+//        $post = Post::find($id);
+//
+//        return view('posts.show', compact('post'));
+//    }
+
+    public function show(Post $post)
+    {
+        return view('posts.show', compact('post'));
     }
 
     public function create()
