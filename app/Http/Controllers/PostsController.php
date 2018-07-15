@@ -36,13 +36,19 @@ class PostsController extends Controller
 //
 //        $posts = $posts->get();
 
-        $archives = Post::selectRaw('year(created_at) as year,monthname(created_at) as month,count(*) published')
-            ->groupBy('year','month')
-            ->orderByRaw('min(created_at) desc')
-            ->get()
-            ->toArray();
+        // Temporary
+//        $archives = Post::selectRaw('year(created_at) as year,monthname(created_at) as month,count(*) published')
+//            ->groupBy('year','month')
+//            ->orderByRaw('min(created_at) desc')
+//            ->get()
+//            ->toArray();
+//
+//        return view('posts.index', compact('posts', 'archives'));
 
-        return view('posts.index', compact('posts', 'archives'));
+
+//        return view('posts.index')->with('posts', $posts);
+
+        return view('posts.index', compact('posts'));
     }
 
 //    public function show($id)

@@ -15,6 +15,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+//        \View::composer();
+        view()->composer('layouts.sidebar', function ($view) {
+            $view->with('archives', \App\Post::archives());
+        });
+
     }
 
     /**
