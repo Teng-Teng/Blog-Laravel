@@ -31,7 +31,8 @@ class ExampleTest extends TestCase
 
         // Then the response should be in the proper format.
 //        $this->assertCount(2, $posts);
-dd($posts);
+        // dd($posts);
+
         $this->assertEquals([
             [
                 "year" => $first->created_at->format('Y'),
