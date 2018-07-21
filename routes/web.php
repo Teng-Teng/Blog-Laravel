@@ -13,15 +13,21 @@
 
 use App\Task;
 
-App::bind('App\Billing\Stripe', function () {
-    return new \App\Billing\Stripe(config('services.stripe.secret'));
-});
+//App::bind('App\Billing\Stripe', function () {
+//    return new \App\Billing\Stripe(config('services.stripe.secret'));
+//});
+
+//App::singleton('App\Billing\Stripe', function () {
+//    return new \App\Billing\Stripe(config('services.stripe.secret'));
+//});
+
+dd(resolve('App\Billing\Stripe'));
 
 $stripe = App::make('App\Billing\Stripe');
-//$stripe = resolve('App\Billing\Stripe');
-//$stripe = app('App\Billing\Stripe');
+$stripe = resolve('App\Billing\Stripe');
+$stripe = app('App\Billing\Stripe');
 
-dd($stripe);
+//dd($stripe);
 
 
 Route::get('/', 'PostsController@index')->name('home');
